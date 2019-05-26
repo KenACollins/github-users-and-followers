@@ -52,5 +52,5 @@ The output of the user search is shockingly missing the total followers count.  
 
 ...failed.
 
-Since I feel that the true goal of this exercise is to demonstrate the creation of a single page application utilzing
+Since I feel that the true goal of this exercise is to demonstrate the creation of a single page application utilizing
 React and to host it on a cloud server, I have fulfilled this criteria. 
