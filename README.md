@@ -1,68 +1,43 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Cloud Hosting
 
-## Available Scripts
+This project is hosted on Heroku at URL (https://shrouded-brook-46780.herokuapp.com/).
 
-In the project directory, you can run:
+## Caveats
 
-### `npm start`
+I spent two hours reading through the GitHub API online documentation.  While it helped me formulate a proper
+URL to retrieve a GitHub user by user name, nowhere could I find out how to:
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+A) Obtain the total number of followers of a requested GitHub user
+B) Construct a REST GET URL that would return subsequent sets of followers after the initial 30.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Since the true goal of this exercise is to demonstrate the creation of a single page application utilzing
+React and to host it on a cloud server, I have fulfilled this criteria.  
 
-### `npm test`
+## Coding Challenge
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Guidelines
 
-### `npm run build`
+Please organize, design, test, document and deploy your code as if it were going into production, then send
+us a link to the hosted repository (e.g. Github, Bitbucket...).
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Functional Spec
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Create an application that allows a user to search for a GitHub username. On a successful search return,
+display the user's GitHub handle, follower count, and a list of the user's followers (just the avatar is fine).
+Since some users (e.g. mrdoob, holman, etc.) have many thousands of followers, GitHub only returns a
+portion of the followers with each request. Create a "load more" button that, when clicked, fetches the next
+payload of followers. This button should persist until there are no more pages of followers to fetch.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Information on the GitHub API is available here:  https://developer.github.com/v3/
 
-### `npm run eject`
+The UX/UI is totally up to you. If you like, get creative and add additional features a user might find useful!
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Technical Spec
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The front‐end should ideally be a single page app with a single index.html linking to external JS/CSS/etc.
+Please take take this opportunity to demonstrate your CSS3 and HTML5 knowledge. Please use ReactJS to complete 
+the coding challenge.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Host It!
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+When you’re done, host it somewhere (e.g. on Amazon EC2, Heroku, Google AppEngine, etc.).
