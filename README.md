@@ -31,7 +31,7 @@ When you’re done, host it somewhere (e.g. on Amazon EC2, Heroku, Google AppEng
 
 ### Cloud Hosting
 
-This project is hosted on Heroku at URL (https://shrouded-brook-46780.herokuapp.com/).
+This project is hosted on Heroku at URL https://shrouded-brook-46780.herokuapp.com/.
 
 ### Implementation Caveats
 
