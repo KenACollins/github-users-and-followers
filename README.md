@@ -7,7 +7,7 @@ This project is hosted on Heroku at URL (https://shrouded-brook-46780.herokuapp.
 I spent two hours reading through the GitHub API online documentation.  While it helped me formulate a proper
 URL to retrieve a GitHub user by user name, nowhere could I find out how to:
 
-A) Obtain the total number of followers of a requested GitHub user
+A) Obtain the total number of followers of a requested GitHub user <br>
 B) Construct a REST GET URL that would return subsequent sets of followers after the initial 30.
 
 Since the true goal of this exercise is to demonstrate the creation of a single page application utilzing
