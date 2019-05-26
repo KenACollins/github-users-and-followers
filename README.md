@@ -1,18 +1,3 @@
-## Cloud Hosting
-
-This project is hosted on Heroku at URL (https://shrouded-brook-46780.herokuapp.com/).
-
-## Caveats
-
-I spent two hours reading through the GitHub API online documentation.  While it helped me formulate a proper
-URL to retrieve a GitHub user by user name, nowhere could I find out how to:
-
-A) Obtain the total number of followers of a requested GitHub user <br>
-B) Construct a REST GET URL that would return subsequent sets of followers after the initial 30.
-
-Since the true goal of this exercise is to demonstrate the creation of a single page application utilzing
-React and to host it on a cloud server, I have fulfilled this criteria.  
-
 ## Coding Challenge
 
 ### Guidelines
@@ -41,3 +26,31 @@ the coding challenge.
 ### Host It!
 
 When you’re done, host it somewhere (e.g. on Amazon EC2, Heroku, Google AppEngine, etc.).
+
+## Solution Details
+
+### Cloud Hosting
+
+This project is hosted on Heroku at URL (https://shrouded-brook-46780.herokuapp.com/).
+
+### Implementation Caveats
+
+I thoroughly read through the GitHub API online documentation and even reviewed questions posted on Stack Overflow
+by other developers seeking to use the GitHub API in similar ways.  While the research helped me formulate a proper
+URL to retrieve a GitHub user by user name, nowhere could I find out how to:
+
+A) Obtain the total number of followers of a requested GitHub user <br>
+B) Construct a REST GET URL that would return subsequent sets of followers after the initial 30.
+
+The output of the user search is shockingly missing the total followers count.  Attempts at adding...
+
+### `page=2&per_page=30`
+
+...to the URL that returns followers...
+
+### `/users/${userName}/followers`
+
+...failed.
+
+Since I feel that the true goal of this exercise is to demonstrate the creation of a single page application utilzing
+React and to host it on a cloud server, I have fulfilled this criteria. 
