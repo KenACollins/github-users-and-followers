@@ -28,9 +28,9 @@ class App extends React.Component {
             this.setState({ githubUser: response1.data, followers: response2.data, errorMessage: "" });
         }
         catch (err) {
-            // Update state with error message but also clear the previous state for the githubUser property
-            // so that previously successful search results do not linger on-screen.
-            this.setState({ githubUser: {}, errorMessage: err });
+            // Update state with error message but also clear the previous state for the githubUser and followers
+            // properties so that previously successful search results do not linger on-screen.
+            this.setState({ githubUser: {}, followers: [], errorMessage: err });
         }
     }
 
