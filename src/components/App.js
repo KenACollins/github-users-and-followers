@@ -10,7 +10,12 @@ class App extends React.Component {
     currentFollowersPage = 0;
     currentFollowersCount = 0;
 
-    onSearchSubmit = async userName => { 
+    onSearchSubmit = async userName => {
+        // Initialize all state and instance variables before processing current search.
+        this.setState({ githubUser: {}, followers: [], errorMessage: "" });
+        this.currentFollowersPage = 0;
+        this.currentFollowersCount = 0;
+
         try {
             // Retrieve data for requested Github user.
             const response1 = await github.get(`/users/${userName}`);
@@ -31,6 +36,9 @@ class App extends React.Component {
             // Update state with error message but also clear the previous state for the githubUser and followers
             // properties so that previously successful search results do not linger on-screen.
             this.setState({ githubUser: {}, followers: [], errorMessage: err });
+
+            // Reset followers count.
+            this.currentFollowersCount = 0;
         }
     }
 
@@ -59,7 +67,7 @@ class App extends React.Component {
     }
     
     showMoreFollowersButton = () => {
-        if (this.currentFollowersCount === this.maxFollowersPerPage) {
+        if (this.state.followers.length > 0 && this.currentFollowersCount === this.maxFollowersPerPage) {
             return (
                 <button 
                     className="ui purple button"
