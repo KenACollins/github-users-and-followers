@@ -1,3 +1,11 @@
+## Introduction
+
+I created this repository to show my source code as part of a coding challenge I was given by Ritani for
+the final step in their hiring process.
+
+The description of the coding challenge is below followed by Solution Details where I document the approach
+I took to solving the problem.
+
 ## Coding Challenge
 
 ### Guidelines
@@ -33,24 +41,44 @@ When you’re done, host it somewhere (e.g. on Amazon EC2, Heroku, Google AppEng
 
 This project is hosted on Heroku at URL https://shrouded-brook-46780.herokuapp.com/.
 
-### Implementation Caveats
+### Components
 
-I thoroughly read through the GitHub API online documentation and even reviewed questions posted on Stack Overflow
-by other developers seeking to use the GitHub API in similar ways.  While the research helped me formulate a proper
-URL to retrieve a GitHub user by user name, nowhere could I find out how to:
+I coded the solution in React and created the following components:
 
-A) Obtain the total number of followers of a requested GitHub user <br>
-B) Construct a REST GET URL that would return subsequent sets of followers after the initial 30.
+#### App
+Main component at top of hierarchy.
 
-The output of the user search is shockingly missing the total followers count.  Attempts at adding...
+#### SearchBar
+Displays an input field with a hardcoded label.
 
-### `page=2&per_page=30`
+#### UserCard
+Used for both the requested GitHub user and his or her followers.  Contains avatar image and metadata that includes
+the GitHub username.  When used to display the requested GitHub user, will also display a small people icon with a 
+total count of followers.
 
-...to the URL that returns followers...
+### Third Party Tools
 
-### `/users/${userName}/followers`
+#### Axios
+I opted to use axios for Ajax calls instead of fetch() since I like the way I can set HTTP request headers in axios
+and the GitHub API documentation urged passing an Accept header to force the usage of the version 3 API.
 
-...failed.
+#### Semantic UI
+No sense in reinventing the wheel.  I relied on Semantic UI, https://semantic-ui.com/, for UI sample code.
 
-Since I feel that the true goal of this exercise is to demonstrate the creation of a single page application utilizing
-React and to host it on a cloud server, I have fulfilled this criteria. 
+### Features
+
+I set a per page count of 50 followers as 100 seemed too much.  When the "See More Followers" button is clicked, rather
+than swap in a new set of 50 followers, I append the new followers to the previously loaded ones.  React is smart enough
+not to re-render the previously loaded followers.  The only downside to this decision is that if one tries to load all
+followers of a hugely popular GitHub user, it probably will bog down the browser.
+
+### Outstanding Issues
+
+#### Known Bugs
+If a legitimate GitHub user, with or without followers, is loaded on-screen and then a fake username is entered in the search bar, 
+a new "Requested GitHub User" heading will appear along with an error message, but it will be positioned below the previously loaded 
+GitHub user.  What really should occur is that bad searches, or really any searches, should clear the screen.
+
+#### Known Coding Improvement
+I currently have two functions for retrieving and displaying followers, one for the initial set, and one that runs every time the 
+"Show More Followers" button is clicked.  I know that I can consolidate them into one.
