@@ -82,13 +82,7 @@ followers of a hugely popular GitHub user, it probably will bog down the browser
 
 ### Outstanding Issues
 
-#### Known Bugs
-
-If a legitimate GitHub user, with or without followers, is loaded on-screen and then a fake username is entered in the search bar, 
-a new "Requested GitHub User" heading will appear along with an error message, but it will be positioned below the previously loaded 
-GitHub user.  What really should occur is that bad searches, or really any searches, should clear the screen.
-
 #### Known Coding Improvement
 
-I currently have two functions for retrieving and displaying followers, one for the initial set, and one that runs every time the 
-"Show More Followers" button is clicked.  I know that I can consolidate them into one.
+I currently have two functions for retrieving and displaying followers, showFollowers() for the initial load, and 
+showMoreFollowers() that runs every time the "Show More Followers" button is clicked.  They can be consolidated into one.

@@ -24,11 +24,16 @@ const showFollowersCount = followersCount => {
             <div className="extra content">
                 <a href="/">
                     <i className="user icon"></i>
-                    {followersCount} Followers
+                    {formatNumber(followersCount)} Followers
                 </a>
             </div>
         );
     }
+};
+
+// Format large numbers of followers with thousands separator. Example: 12345 => 12,345
+const formatNumber = num => {
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 };
 
 const UserCard = props => {
