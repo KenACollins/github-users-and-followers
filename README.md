@@ -71,7 +71,7 @@ and the GitHub API documentation urged passing an Accept header to force the usa
 
 #### Semantic UI
 
-No sense in reinventing the wheel.  I relied on Semantic UI, https://semantic-ui.com/, for UI sample code.
+No sense in reinventing the wheel, I relied on Semantic UI, https://semantic-ui.com/, for UI sample code.
 
 ### Features
 
@@ -79,10 +79,3 @@ I set a per page count of 50 followers as 100 seemed too much.  When the "See Mo
 than swap in a new set of 50 followers, I append the new followers to the previously loaded ones.  React is smart enough
 not to re-render the previously loaded followers.  The only downside to this decision is that if one tries to load all
 followers of a hugely popular GitHub user, it probably will bog down the browser.
-
-### Outstanding Issues
-
-#### Known Coding Improvement
-
-I currently have two functions for retrieving and displaying followers, showFollowers() for the initial load, and 
-showMoreFollowers() that runs every time the "Show More Followers" button is clicked.  They can be consolidated into one.
