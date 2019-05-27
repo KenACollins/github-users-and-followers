@@ -41,17 +41,23 @@ When you’re done, host it somewhere (e.g. on Amazon EC2, Heroku, Google AppEng
 
 This project is hosted on Heroku at URL https://shrouded-brook-46780.herokuapp.com/.
 
+In case you are unfamiliar with Heroku, they assign ridiculous subdomains to each project when you are using a free account
+as I am. This is where "shrouded-brook-46780" comes from.
+
 ### Components
 
 I coded the solution in React and created the following components:
 
 #### App
+
 Main component at top of hierarchy.
 
 #### SearchBar
+
 Displays an input field with a hardcoded label.
 
 #### UserCard
+
 Used for both the requested GitHub user and his or her followers.  Contains avatar image and metadata that includes
 the GitHub username.  When used to display the requested GitHub user, will also display a small people icon with a 
 total count of followers.
@@ -59,10 +65,12 @@ total count of followers.
 ### Third Party Tools
 
 #### Axios
+
 I opted to use axios for Ajax calls instead of fetch() since I like the way I can set HTTP request headers in axios
 and the GitHub API documentation urged passing an Accept header to force the usage of the version 3 API.
 
 #### Semantic UI
+
 No sense in reinventing the wheel.  I relied on Semantic UI, https://semantic-ui.com/, for UI sample code.
 
 ### Features
@@ -75,10 +83,12 @@ followers of a hugely popular GitHub user, it probably will bog down the browser
 ### Outstanding Issues
 
 #### Known Bugs
+
 If a legitimate GitHub user, with or without followers, is loaded on-screen and then a fake username is entered in the search bar, 
 a new "Requested GitHub User" heading will appear along with an error message, but it will be positioned below the previously loaded 
 GitHub user.  What really should occur is that bad searches, or really any searches, should clear the screen.
 
 #### Known Coding Improvement
+
 I currently have two functions for retrieving and displaying followers, one for the initial set, and one that runs every time the 
 "Show More Followers" button is clicked.  I know that I can consolidate them into one.
