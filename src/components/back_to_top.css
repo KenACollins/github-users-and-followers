@@ -1,5 +1,5 @@
 /* === BACK TO TOP FLOATER === */
-/* Back to Top floater.  This is change 1 of 3.  There are accompanying HTML and JS changes. */
+/* This is code 1 of 3.  Other two places are in App.js componentDidMount() and render() methods. */
 #backToTop {
     width: 50px;            /* Create 50px by 50px square container. */
     height: 50px;
