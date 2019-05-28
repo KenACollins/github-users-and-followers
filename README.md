@@ -75,7 +75,18 @@ No sense in reinventing the wheel, I relied on Semantic UI, https://semantic-ui.
 
 ### Features
 
-I set a per page count of 50 followers as 100 seemed too much.  When the "See More Followers" button is clicked, rather
-than swap in a new set of 50 followers, I append the new followers to the previously loaded ones.  React is smart enough
-not to re-render the previously loaded followers.  The only downside to this decision is that if one tries to load all
-followers of a hugely popular GitHub user, it probably will bog down the browser.
+#### Adding More Followers
+
+I set a per page count of 50 followers as 100 seemed too much. When the "See More Followers" button is clicked, rather
+than swap in a new set of 50 followers, I append the new followers to the previously loaded ones. React is smart enough
+not to re-render the previously loaded followers. This approach allows a user to see all of the followers for users with
+a reasonable number of them. The only downside to this decision is that if one tries to load all followers of a hugely 
+popular GitHub user, it probably will bog down the browser.
+
+#### Back to Top
+
+When you scroll down through the followers and maybe click the button to load more, you end up scrolling down the single
+page application (SPA) fairly far.  To make it easy to shoot back up to the top of the screen to begin a new search, I 
+provide a 'Back to Top' floating icon fixed in the bottom right corner of the screen that is initially absent when you are
+already at the top, but fades in as you scroll the page.  When clicked, this icon gently glides the page upwards until it 
+reaches the top.

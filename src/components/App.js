@@ -1,14 +1,36 @@
+import './back_to_top.css';
 import React from 'react';
 import github from '../api/github';
 import SearchBar from './SearchBar';
 import UserCard from './UserCard';
 import FollowersList from './FollowersList';
+import $ from "jquery";
 
 class App extends React.Component {
     state = { githubUser: {}, followers: [], errorMessage: "" };
     maxFollowersPerPage = 50;
     currentFollowersPage = 0;
     currentFollowersCount = 0;
+
+    componentDidMount() {
+        // When the user scrolls web page...
+        $(window).scroll(function() {
+            // If distance from top exceeds 100 pixels, fade in 'back to top' floater.
+            if ($(this).scrollTop() > 100) {
+                $('#backToTop').fadeIn();
+            }
+            // Otherwise, user is near top of page, fade out 'back to top' floater.
+            else {
+                $('#backToTop').fadeOut();
+            }
+        });
+
+        // When user clicks on 'back to top' floater, slowly scroll web page up to the top.
+        $('#backToTop').click(function() {
+            $("html, body").animate({ scrollTop: 0 }, 600);
+            return false;
+        });
+    }
 
     onSearchSubmit = async userName => {
         // Initialize all state properties and instance variables before processing current search.
@@ -128,6 +150,7 @@ class App extends React.Component {
                 {this.showFollowers()}
                 {this.showMoreFollowersButton()}
                 {this.showErrorMessage()}
+                <a id="backToTop" href="/" title="Back to Top"><span></span></a>
             </div>
         );
     }
