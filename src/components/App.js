@@ -4,7 +4,7 @@ import github from '../api/github';
 import SearchBar from './SearchBar';
 import UserCard from './UserCard';
 import FollowersList from './FollowersList';
-import $ from "jquery";
+import $ from 'jquery';
 
 class App extends React.Component {
     state = { githubUser: {}, followers: [], errorMessage: "" };
