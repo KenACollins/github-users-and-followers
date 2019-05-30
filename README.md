@@ -73,6 +73,16 @@ and the GitHub API documentation urged passing an Accept header to force the usa
 
 No sense in reinventing the wheel, I relied on Semantic UI, https://semantic-ui.com/, for UI sample code.
 
+#### jQuery
+
+Wait, what, mixing jQuery and React in the same project?!! Am I nuts? Okay, I know that jQuery is all about DOM
+manipulation and with React, developers don't have to deal with that thanks to the way React handles it through
+comparing its virtual DOM with the real one. 
+
+The reason that I make use of jQuery is purely to support the nice "Back to Top" feature described below. I had 
+already built this "Back to Top" feature in jQuery for another client and did not have time to revisit how to 
+accomplish the same thing in pure React.
+
 ### Features
 
 #### Adding More Followers
