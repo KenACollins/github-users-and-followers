@@ -1,52 +1,33 @@
-## Introduction
-
-I created this repository to show my source code as part of a coding challenge I was given by Ritani for
-the final step in their hiring process.
-
-The description of the coding challenge is below followed by Solution Details where I document the approach
-I took to solving the problem.
-
-## Coding Challenge
-
-### Guidelines
-
-Please organize, design, test, document and deploy your code as if it were going into production, then send
-us a link to the hosted repository (e.g. Github, Bitbucket...).
+## Specifications
 
 ### Functional Spec
 
-Create an application that allows a user to search for a GitHub username. On a successful search return,
-display the user's GitHub handle, follower count, and a list of the user's followers (just the avatar is fine).
-Since some users (e.g. mrdoob, holman, etc.) have many thousands of followers, GitHub only returns a
-portion of the followers with each request. Create a "load more" button that, when clicked, fetches the next
-payload of followers. This button should persist until there are no more pages of followers to fetch.
+The application allows a user to search for a GitHub username and get back metadata for that user and his or her followers. 
 
-Information on the GitHub API is available here:  https://developer.github.com/v3/
+The solution encompasses the GitHub API documented here:  https://developer.github.com/v3/
 
-The UX/UI is totally up to you. If you like, get creative and add additional features a user might find useful!
+On return from a successful search of one GitHub user, the screen displays the found GitHub user (avatar, username, 
+follower count) along with a list of that user's followers (just username and avatar). Since some users (e.g. mrdoob, 
+holman, etc.) have many thousands of followers, GitHub only returns a portion of the followers with each request (at time
+of this writing, the cap is 30 followers). In these situations, a "load more" button is displayed that when clicked fetches 
+the next payload of followers. This button persists until there are no more pages of followers to fetch.
 
 ### Technical Spec
 
-The front‐end should ideally be a single page app with a single index.html linking to external JS/CSS/etc.
-Please take take this opportunity to demonstrate your CSS3 and HTML5 knowledge. Please use ReactJS to complete 
-the coding challenge.
+The front‐end is implemented in React as a single page application (SPA) with just one index.html linking to external JS and CSS.
 
-### Host It!
-
-When you’re done, host it somewhere (e.g. on Amazon EC2, Heroku, Google AppEngine, etc.).
-
-## Solution Details
+## Implementation Details
 
 ### Cloud Hosting
 
-This project is hosted on Heroku at URL https://shrouded-brook-46780.herokuapp.com/.
+Try out the application! It is currently up and running on cloud host provider Heroku at URL https://shrouded-brook-46780.herokuapp.com/.
 
 In case you are unfamiliar with Heroku, they assign ridiculous subdomains to each project when you are using a free account
 as I am. This is where "shrouded-brook-46780" comes from.
 
-### Components
+### Design
 
-I coded the solution in React and created the following components:
+I coded the solution in React, creating the following components:
 
 #### App
 
